@@ -19,6 +19,8 @@ jobs:
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       
     - name: Build the Docker image
-      run: docker build -t bayramozkan /cicd-pipeline:docker .
+      run: docker buildx  build -t "${{ secrets.DOCKER_USERNAME }}/cicd-pipeline:docker" .
     - name: Push to Dockerhub
-      run: docker push bayramozkan/cicd-pipeline:docker
+      run: docker buildx push ${{ secrets.DOCKER_USERNAME }}/cicd-pipeline:docker"
+
+
