@@ -1,8 +1,8 @@
-name: GitHub Actions CD Pipeline
+name:  CD Pipeline
 
 on:
   workflow_run:
-    workflows: ["GitHub Actions CI Pipeline"]
+    workflows: ["CI Pipeline"]
     types:
       - completed
 
