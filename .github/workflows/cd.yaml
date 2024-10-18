@@ -1,11 +1,11 @@
-name:  CD Pipeline
+name:  GitHub Actions CD Pipeline
 
 on:
   push:
       branches: ["docker"]
 
   workflow_run:
-    workflows: ["CI Pipeline"]
+    workflows: ["GitHub Actions CI Pipeline"]
     types:
       - completed
 
