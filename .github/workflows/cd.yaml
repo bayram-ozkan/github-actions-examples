@@ -1,11 +1,14 @@
 name:  CD Pipeline
 
 on:
+  push:
+      branches: ["docker"]
+
   workflow_run:
     workflows: ["CI Pipeline"]
     types:
       - completed
-    branches: [ "docker" ]
+
 
 
 jobs:
